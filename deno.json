@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "start": "TOKEN=qrHF7bjoKDLie4-SC2KguKMEX2QkmVf_ DB=59uoha82 deno run -A --watch=static/,routes/ dev.ts"
+  },
+  "importMap": "./import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
+}
