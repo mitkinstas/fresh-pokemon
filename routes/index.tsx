@@ -4,6 +4,8 @@ import type { Pokemon } from "../utils/pokemon.ts";
 import { DB, TOKEN } from "../utils/env.ts";
 
 import PokemonCard from "../src/PokemonCard.tsx";
+import Header from "../src/Header.tsx";
+import ListIsland from "../islands/List.tsx";
 
 export const handler: Handlers<{ pokemon: Pokemon; query: string }> = {
   async GET(req, ctx) {
@@ -31,6 +33,7 @@ export default function Home(
   const { pokemon, query } = props.data;
   return (
     <div class="mx-auto max-w-screen-xl p-5">
+      <Header />
       <form class="flex w-full gap-2 mb-10">
         <input
           type="text"
@@ -48,7 +51,7 @@ export default function Home(
 
       <div class="grid sm:grid-cols-2 md:grid-cols-3 mt-5 gap-2">
         {pokemon.map((pokemon) => (
-          <PokemonCard pokemon={pokemon} key={pokemon.id} />
+          <PokemonCard pokemon={pokemon} key={pokemon.id} allowAdd/>
         ))}
       </div>
     </div>
